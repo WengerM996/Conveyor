@@ -3,12 +3,12 @@ using UnityEngine.Events;
 
 public class TapeEndTrigger : MonoBehaviour
 {
-    public event UnityAction<Tape> tapeHasReachedTheEndOfTheConveyor;
+    public event UnityAction<Tape> endOfConveyor;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent(out Tape tape))
         {
-            tapeHasReachedTheEndOfTheConveyor?.Invoke(tape);
+            endOfConveyor?.Invoke(tape);
         }
     }
 }

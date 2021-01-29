@@ -14,12 +14,12 @@ public class ConveyorBuild : MonoBehaviour
     
     private void OnEnable()
     {
-        _tapeEndTrigger.tapeHasReachedTheEndOfTheConveyor += OnTapeHasReachedTheEndOfTheConveyor;
+        _tapeEndTrigger.endOfConveyor += OnEndOfConveyor;
     }
 
     private void OnDisable()
     {
-        _tapeEndTrigger.tapeHasReachedTheEndOfTheConveyor -= OnTapeHasReachedTheEndOfTheConveyor;
+        _tapeEndTrigger.endOfConveyor -= OnEndOfConveyor;
     }
 
     private void Awake()
@@ -44,7 +44,7 @@ public class ConveyorBuild : MonoBehaviour
         }
     }
 
-    private void OnTapeHasReachedTheEndOfTheConveyor(Tape tape)
+    private void OnEndOfConveyor(Tape tape)
     {
         ReSpawnTape(tape);
     }
